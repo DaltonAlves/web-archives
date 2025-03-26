@@ -17,10 +17,34 @@
             padding: 10px 0;
             text-align: center;
         }
+        .dismissible-banner {
+            background-color: #a0a0a0c2; /* Lighter shade of the body background */
+            color: #333;
+            padding: 5px 10px; /* Reduced padding for a smaller banner */
+            text-align: center; /* Center the text horizontally */
+            font-weight: normal;
+            font-size: 0.8em; /* Slightly smaller text */
+            position: relative;
+            display: flex;
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+            height: 50px; /* Set a fixed height for the banner */
+        }
+        .dismissible-banner button {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 1.2em;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
         .embed-container {
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 5px;
         }
         replay-web-page {
             width: 80%;
@@ -36,8 +60,6 @@
             text-align: justify; 
             padding: 0 20px; 
         }
-
-        /* Styling for the h2 element */
         h2 {
             font-size: 2em; 
             color: #2a9d8f; 
@@ -62,8 +84,6 @@
         In October 2014, the oldest art museum in Washington D.C., the Corcoran Gallery of Art closed its doors. This digital exhibition provides insight into the final days of the Corcoran by allowing users to explore archived versions of websites from 2014.
     </p>
     <h2>Save the Corcoran</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id orci imperdiet, lacinia erat eu, tempus mi. Aenean convallis massa ac massa maximus lacinia. Nunc faucibus, nibh non tempus ultricies, turpis leo malesuada metus, sed faucibus neque nibh vitae magna. Proin ut elit ac nibh luctus facilisis egestas eget metus. Aliquam erat volutpat. Ut cursus rhoncus ultricies. Donec quis lectus sit amet quam porttitor semper. Ut feugiat ultrices lectus, sit amet pharetra urna lacinia at. Mauris nec suscipit justo, vitae aliquet nulla. Curabitur condimentum nunc pulvinar mi dignissim tincidunt. Vestibulum massa velit, finibus eu mi id, fringilla maximus lorem. Etiam porttitor quis tellus nec pulvinar. Donec eget nisi nec dolor imperdiet gravida. Curabitur dapibus, ex sed congue ullamcorper, dui nulla imperdiet risus, quis efficitur massa nisi sit amet elit. </p>
-
     <div class="embed-container">
         <!-- ReplayWeb.page Embed -->
         <replay-web-page 
@@ -74,10 +94,23 @@
             embed="replay-with-info">
         </replay-web-page>
     </div>
+    <!-- Dismissible banner -->
+    <div class="dismissible-banner" id="banner">
+        <p>Please note, external links in the above archived version of the website will not work. They were not archived in 2014 when this page was captured by archivists.</p>
+        <button onclick="dismissBanner()">X</button>
+    </div>
+    <p>Students, faculty, staff, and friends of the Corcoran Gallery joined together to form "Save the Corcoran" in an attempt to prevent the Gallery from closing. The group was formed in June 2012 when news broke that the Gallery's Trustees sought to appraise the value of the Museum building, indicating potential plans to sell the property.  By June of 2014, the group was allowed to present its case for preserving the Corcoran during the court procedures that were required to official close the Gallery.</p>
 
     <!-- Load the necessary script to handle the custom element -->
     <script src="https://cdn.jsdelivr.net/gh/internetarchive/replayweb.page@latest/replayweb.page.min.js"></script>
     <!-- Load the self-hosted ui.js -->
     <script src="https://daltonalves.github.io/web-archives/js/ui.js"></script>
+
+    <script>
+        // Function to dismiss the banner
+        function dismissBanner() {
+            document.getElementById('banner').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
