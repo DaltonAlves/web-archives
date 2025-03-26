@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corcoran - Web Archive Exhibit Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .embed-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        replay-web-page {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        p {
+            font-size: 1.1em; 
+            line-height: 1.6; 
+            color: #333; 
+            max-width: 800px; 
+            margin: 20px auto; 
+            text-align: justify; 
+            padding: 0 20px; 
+        }
+
+        /* Styling for the h2 element */
+        h2 {
+            font-size: 2em; 
+            color: #2a9d8f; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-top: 40px;
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            background-color: #e9c46a; 
+            padding: 10px 0;
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Corcoran Gallery of Art - Web Archives of the Final Days</h1>
+    </header>
+    <p>
+        In October 2014, the oldest art museum in Washington D.C., the Corcoran Gallery of Art closed its doors. This digital exhibition provides insight into the final days of the Corcoran by allowing users to explore archived versions of websites from 2014.
+    </p>
+    <h2>Save the Corcoran</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id orci imperdiet, lacinia erat eu, tempus mi. Aenean convallis massa ac massa maximus lacinia. Nunc faucibus, nibh non tempus ultricies, turpis leo malesuada metus, sed faucibus neque nibh vitae magna. Proin ut elit ac nibh luctus facilisis egestas eget metus. Aliquam erat volutpat. Ut cursus rhoncus ultricies. Donec quis lectus sit amet quam porttitor semper. Ut feugiat ultrices lectus, sit amet pharetra urna lacinia at. Mauris nec suscipit justo, vitae aliquet nulla. Curabitur condimentum nunc pulvinar mi dignissim tincidunt. Vestibulum massa velit, finibus eu mi id, fringilla maximus lorem. Etiam porttitor quis tellus nec pulvinar. Donec eget nisi nec dolor imperdiet gravida. Curabitur dapibus, ex sed congue ullamcorper, dui nulla imperdiet risus, quis efficitur massa nisi sit amet elit. </p>
+
+    <div class="embed-container">
+        <!-- ReplayWeb.page Embed -->
+        <replay-web-page 
+            source="warcs/ARCHIVEIT-4811-NONE-22488-20141110151339808-00000-wbgrp-crawl058.us.archive.org-6445.warc"
+            url="http://savethecorcoran.org/"
+            swName="sw.js"
+            updateFavicons
+            embed="replay-with-info">
+        </replay-web-page>
+    </div>
+
+    <!-- Load the necessary script to handle the custom element -->
+    <script src="https://cdn.jsdelivr.net/gh/internetarchive/replayweb.page@latest/replayweb.page.min.js"></script>
+    <!-- Load the self-hosted ui.js -->
+    <script src="/js/ui.js"></script>
+</body>
+</html>
